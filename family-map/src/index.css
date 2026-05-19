@@ -631,3 +631,123 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Mobile tabs — hidden on desktop */
+.mobile-tabs {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  /* Compact header */
+  .header {
+    padding: 0.6rem 1rem 0.5rem;
+    gap: 0.4rem;
+  }
+
+  .header__eyebrow,
+  .header__subtitle {
+    display: none;
+  }
+
+  .header h1 {
+    font-size: 1.3rem;
+  }
+
+  .header__actions {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .header__stats {
+    font-size: 0.72rem;
+    gap: 0.35rem;
+    flex-shrink: 0;
+  }
+
+  .header__stats strong {
+    font-size: 0.95rem;
+  }
+
+  .search {
+    min-width: 0;
+    flex: 1;
+    padding: 0.4rem 0.75rem;
+  }
+
+  /* Body: single-panel tab layout */
+  .app__body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .sidebar,
+  .map-wrap,
+  .family-panel {
+    flex: 1;
+    min-height: 0;
+    border-radius: 0 !important;
+  }
+
+  /* Hide inactive panels */
+  .app__body--tab-map .sidebar,
+  .app__body--tab-map .family-panel,
+  .app__body--tab-list .map-wrap,
+  .app__body--tab-list .family-panel,
+  .app__body--tab-details .sidebar,
+  .app__body--tab-details .map-wrap {
+    display: none;
+  }
+
+  /* Sidebar: remove max-height cap from 1100px breakpoint */
+  .sidebar {
+    max-height: none !important;
+  }
+
+  /* Family panel: no min-height cap */
+  .family-panel {
+    min-height: 0 !important;
+  }
+
+  /* Bottom tab bar */
+  .mobile-tabs {
+    display: flex;
+    flex-shrink: 0;
+    background: var(--bg-panel);
+    border-top: 1px solid var(--line);
+    height: 58px;
+  }
+
+  .mobile-tabs__btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--ink-muted);
+    cursor: pointer;
+    padding: 0.3rem 0;
+    transition: color 0.15s ease;
+  }
+
+  .mobile-tabs__btn--active {
+    color: var(--accent);
+  }
+
+  .mobile-tabs__btn svg {
+    transition: transform 0.15s ease;
+  }
+
+  .mobile-tabs__btn--active svg {
+    transform: scale(1.1);
+  }
+}

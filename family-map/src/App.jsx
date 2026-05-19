@@ -11,6 +11,7 @@ export default function App() {
   const [selectedLocation, setSelectedLocation] = useState(null);
   const [selectedTree, setSelectedTree] = useState(null);
   const [search, setSearch] = useState("");
+  const [mobileTab, setMobileTab] = useState("map");
 
   useEffect(() => {
     fetch("/families.json")
@@ -56,12 +57,14 @@ export default function App() {
     setSelectedLocation(loc);
     setSelectedTree(null);
     setSidebarMode("places");
+    setMobileTab("details");
   }, []);
 
   const handleSelectTree = useCallback((tree) => {
     setSelectedTree(tree);
     setSelectedLocation(null);
     setSidebarMode("trees");
+    setMobileTab("details");
   }, []);
 
   const handleClosePanel = useCallback(() => {
@@ -98,7 +101,7 @@ export default function App() {
         onSearchChange={setSearch}
       />
 
-      <div className="app__body">
+      <div className={`app__body app__body--tab-${mobileTab}`}>
         <Sidebar
           mode={sidebarMode}
           onModeChange={setSidebarMode}
@@ -122,6 +125,42 @@ export default function App() {
           onClose={handleClosePanel}
         />
       </div>
+
+      <nav className="mobile-tabs" aria-label="ניווט ראשי">
+        <button
+          type="button"
+          className={`mobile-tabs__btn${mobileTab === "map" ? " mobile-tabs__btn--active" : ""}`}
+          onClick={() => setMobileTab("map")}
+          aria-pressed={mobileTab === "map"}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/>
+          </svg>
+          <span>מפה</span>
+        </button>
+        <button
+          type="button"
+          className={`mobile-tabs__btn${mobileTab === "list" ? " mobile-tabs__btn--active" : ""}`}
+          onClick={() => setMobileTab("list")}
+          aria-pressed={mobileTab === "list"}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+          </svg>
+          <span>רשימה</span>
+        </button>
+        <button
+          type="button"
+          className={`mobile-tabs__btn${mobileTab === "details" ? " mobile-tabs__btn--active" : ""}`}
+          onClick={() => setMobileTab("details")}
+          aria-pressed={mobileTab === "details"}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+          </svg>
+          <span>פרטים</span>
+        </button>
+      </nav>
     </div>
   );
 }
