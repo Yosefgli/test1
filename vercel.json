@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd family-map && npm install && npm run build",
+  "outputDirectory": "family-map/dist",
+  "framework": null
+}
