@@ -1,0 +1,114 @@
+{
+  "munich, germany": {
+    "lat": 48.1371079,
+    "lng": 11.5753822
+  },
+  "andora": {
+    "lat": 42.5407167,
+    "lng": 1.5732033
+  },
+  "atlanta, georgia": {
+    "lat": 33.7544657,
+    "lng": -84.3898151
+  },
+  "budapest, hungary": {
+    "lat": 47.4978789,
+    "lng": 19.0402383
+  },
+  "ofarim, israel": {
+    "lat": 29.5583834,
+    "lng": 34.9522081
+  },
+  "ora-aminadav, israel": {
+    "lat": 31.753246,
+    "lng": 35.153717
+  },
+  "phuket, thailand": {
+    "lat": 7.9366015,
+    "lng": 98.3529292
+  },
+  "akron, oh": {
+    "lat": 41.083064,
+    "lng": -81.518485
+  },
+  "winter park, fl": {
+    "lat": 28.5977707,
+    "lng": -81.3510264
+  },
+  "new york city": {
+    "lat": 40.7127281,
+    "lng": -74.0060152
+  },
+  "crown heights": {
+    "lat": 40.667471,
+    "lng": -73.9435662
+  },
+  "solon, oh": {
+    "lat": 41.3897764,
+    "lng": -81.4412259
+  },
+  "chagrin falls, oh": {
+    "lat": 41.436589,
+    "lng": -81.3855058
+  },
+  "shanghai, china": {
+    "lat": 31.2312707,
+    "lng": 121.4700152
+  },
+  "cleveland, ohio": {
+    "lat": 41.4996574,
+    "lng": -81.6936772
+  },
+  "london, england": {
+    "lat": 51.5074456,
+    "lng": -0.1277653
+  },
+  "cle/ny": {
+    "lat": 56.0755742,
+    "lng": 12.5392232
+  },
+  "thane, india": {
+    "lat": 19.2183,
+    "lng": 72.9781
+  },
+  "ramot hashavim, israel": {
+    "lat": 32.1656,
+    "lng": 34.9322
+  },
+  "lod, israel": {
+    "lat": 31.951,
+    "lng": 34.8881
+  },
+  "migdal ha'amek, israel": {
+    "lat": 32.6764,
+    "lng": 35.2395
+  },
+  "ma'ale ephraim, israel": {
+    "lat": 32.0722,
+    "lng": 35.3947
+  },
+  "parkland, fl": {
+    "lat": 26.31,
+    "lng": -80.237
+  },
+  "atlanta, ga": {
+    "lat": 33.749,
+    "lng": -84.388
+  },
+  "kent, oh": {
+    "lat": 41.1537,
+    "lng": -81.3579
+  },
+  "the bronx": {
+    "lat": 40.8448,
+    "lng": -73.8648
+  },
+  "twinsburg, oh": {
+    "lat": 41.3126,
+    "lng": -81.4401
+  },
+  "athens, oh": {
+    "lat": 39.3292,
+    "lng": -82.1013
+  }
+}
